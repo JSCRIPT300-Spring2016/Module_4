@@ -27,11 +27,11 @@ Week 4
 
    `var pizzaTruckList = trucks.filterByFoodType('pizza');`
 
-4. In **index.js** implement an express server that serves up static files from the public directory. Additionally, write handlers for the following two routes:
+4. In **index.js** implement an express server that serves up static files from the public directory. Additionally, write GET handlers for the following two routes:
 
    `/trucks` This route returns the list of all trucks in the module.  
    `/trucks/:name` This route returns a single truck object that matches the name parameter passed in the route.  
    `/food-types` This route returns the list of all possible food types served by trucks in the module  
-   `/food-types/:type` This route returns the list of all trucks that serve the food type that matches the type parameter passed in the route.
+   `/food-types/:type` This route returns the list of all trucks that serve the food type that matches (case insensitive) the type parameter passed in the route.
 
 5. 
