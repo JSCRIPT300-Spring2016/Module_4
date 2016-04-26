@@ -35,4 +35,4 @@ Week 4
    `/food-types/:type` This route returns the list of all trucks that serve the food type that matches (case insensitive) the type parameter passed in the route.
 
 5. Include your **.eslintrc** file as part of your repo. Your code should be lint-free based on your lint configuration.
-6. Use a **.gitnore** file in your project locally, adding 'node_modules' to the file to prevent the inclusion of node_modules in your repo.
+6. Use a **.gitignore** file in your project locally, adding 'node_modules' to the file to prevent the inclusion of node_modules in your repo.
