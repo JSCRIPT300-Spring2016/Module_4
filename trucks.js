@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 var foodTrucks = [
   {
     name: '314 PIE',
@@ -510,6 +511,8 @@ var foodTrucks = [
 // filterByDay(day) - return trucks with 'day' in schedule (use your filterByDay function from Module 3 homework)
 // filterByFoodType(foodType) - return trucks with associated 'foodType'
 
+/* eslint-enable max-len */
+
 //function returns true if the currently checked truck is available
 //on the target day
 function filterBySchedule(truck, day) {
@@ -540,7 +543,7 @@ var getTrucks = function(){
   var cloneTrucks = foodTrucks.slice(0);
 
   return cloneTrucks;
-}  
+};
 
 //function takes one string parameter and
 //returns a copy of the requested truck object
@@ -550,34 +553,33 @@ var getTruck = function(name){
   for (var i = 0; i < foodTrucks.length; i+= 1){
     if (foodTrucks[i].name === name){
       copyTruck = Object.assign({}, foodTrucks[i]);
-	  break;
-	}
+      break;
+    }
   }
 
   return copyTruck;
-}
+};
 
-//getFoodTypes` This method takes no parameters and returns 
-//an array of all the food types offered by the various trucks 
+//getFoodTypes` This method takes no parameters and returns
+//an array of all the food types offered by the various trucks
 var getFoodTypes = function(){
-  var foodList = [];  
+  var foodList = [];
   //cycle through all trucks
-  for (var i = 0; i < foodTrucks.length; i += 1){ 
+  for (var i = 0; i < foodTrucks.length; i += 1){
     //cycle through all food types of each truck
     for (var j = 0; j <foodTrucks[i].type.length; j += 1){
-	  //in case a food type is found that hasn't been
-	  //encountered yet, add it to the list  
+      //in case a food type is found that hasn't been
+      //encountered yet, add it to the list
       if (foodList.indexOf(foodTrucks[i].type[j])=== -1){
-	    foodList.push(foodTrucks[i].type[j]);
-		//console.log(foodList);
-	  }
-    }  
+        foodList.push(foodTrucks[i].type[j]);
+      }
+    }
   }
 
   return foodList;
-}
+};
 
-//function takes two parameters, a truck object 
+//function takes two parameters, a truck object
 //and a string representing a food type
 //function returns true if the currently checked truck offers
 //the target food type (case insensitive)
@@ -590,9 +592,9 @@ function filterByFoodType(truck, foodType) {
  
   for (var i = 0; i < copyTruck.type.length; i+=1){
     copyTruckFoodArray.push(copyTruck.type[i].toUpperCase());
-  }   
+  }
  //capitalize all letters in the target foodtype
- foodType = foodType.toUpperCase();
+  foodType = foodType.toUpperCase();
  
  //now the comparison is case insensitive:
   if (copyTruckFoodArray.indexOf(foodType) !== -1) {
@@ -601,9 +603,9 @@ function filterByFoodType(truck, foodType) {
     return false;
   }
 }
- 
-//This method takes one parameter, a string representing a food type. 
-//The function returns an array of truck names that serve the 
+
+//This method takes one parameter, a string representing a food type.
+//The function returns an array of truck names that serve the
 //provided type of food.
 var filterTrucksByFoodType = function(foodType){
   var filteredTruckArray = foodTrucks.filter(function(truck){
@@ -626,5 +628,3 @@ var myObj = {
 };
 
 module.exports = myObj;
-//var temp = filterTrucksByFoodType("pizza");
-//console.log("the trucks that serve pizza are: " + temp);
