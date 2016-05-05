@@ -5,6 +5,41 @@
 
 var express = require('express');
 var app = express();
+var trucks = require('./trucks');
+//
+var truckList = trucks.getTrucks();
+function getTrucks(){
+  return trucks.foodTrucks;
+};
+//
+var truck = trucks.getTruck();
+function getTruck('Marination'){
+  return getTrucks.name;
+};
+//
+var foodList = trucks.getFoodTypes()
+function getFoodTypes(){
+  var foodTypes = [];
+  var foodType = trucks.type[]
+  for (var i = 0; i< trucks.length; i++){
+    if(foodType[i] !== foodTypes[i]){
+       foodTypes.push(foodType);
+       }
+    else{
+      return
+    }
+  };
+  return foodTypes;
+};
+//
+
+app.get('/trucks', function (request, response){
+  response.write(truckList);
+  response.write(getTruck);
+  response.write(foodList);
+});
+
+
 // to use static middleware, we call it from our express object
 
 //app.get('/', function (request, response){
@@ -49,11 +84,7 @@ var app = express();
 //  next();
 //});
 //
-//app.get('/trucks', function (request, response){
-//  var trucks = '<ul><li>a</li><li>b</li>' +
-//      '<li>c</li><li>d</li></ul>';
-//  response.send(trucks);
-//});
+
 ////'/trucks' is a route this is a route handler
 //
 //app.use(function(request, response, next){
@@ -61,33 +92,33 @@ var app = express();
 //  next();
 //});//this doesn't work here because it's after the route handler
 
-var trucks = {
-  '314 Pie': 'Pie',
-  'Crisp Creperie': 'French',
-  'Express': 'Southern',
-  'Marions': 'Korean',
-  'Maximus Minimus': 'BBQ'
-};
-app.use(express.static('public'));
-
-app.param('name', function(request, response, next){
-  var truck = request.params.name;
-  var foodTruck = truck[0].toUpperCase() + truck.slice(1).toLowerCase();
-  request.foodTruck = foodTruck;
-  next();
-});
-  
-app.get('/trucks/:name', function(request, response, next){  
-  var foodType = trucks[request.foodTruck];
-  
-  if(!foodType){//checks to ensure the param is found on the object
-    response.status(404).json('No food type for ' +
-                             request.params.name);//error handling
-  }
-  else {
-    response.send(foodType);
-  }
-});
+//var trucks = {
+//  '314 Pie': 'Pie',
+//  'Crisp Creperie': 'French',
+//  'Express': 'Southern',
+//  'Marions': 'Korean',
+//  'Maximus Minimus': 'BBQ'
+//};
+//app.use(express.static('public'));
+//
+//app.param('name', function(request, response, next){
+//  var truck = request.params.name;
+//  var foodTruck = truck[0].toUpperCase() + truck.slice(1).toLowerCase();
+//  request.foodTruck = foodTruck;
+//  next();
+//});
+//  
+//app.get('/trucks/:name', function(request, response, next){  
+//  var foodType = trucks[request.foodTruck];
+//  
+//  if(!foodType){//checks to ensure the param is found on the object
+//    response.status(404).json('No food type for ' +
+//                             request.params.name);//error handling
+//  }
+//  else {
+//    response.send(foodType);
+//  }
+//});
 
 //app.get('/trucks/:name', function(request, response){
 //  var truck = request.params.name;//the name parameter will be available on the request object
