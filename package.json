@@ -1,0 +1,14 @@
+{
+  "name": "module_4_1",
+  "version": "1.0.0",
+  "description": "test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joseph Simpson <jjs0sbw@gmail.com> (http://systemsconcept.org)",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
