@@ -552,9 +552,10 @@ getTrucks = function() {
 getTruck = function(name) {
   var length = foodTrucks.length;
   var i = 0;
+  var inName = name.toLowerCase();
 
   for(i = 0; i < length; i++) {
-    if(foodTrucks[i].name === name) {
+    if(foodTrucks[i].name.toLowerCase() === inName) {
       return foodTrucks[i];
     }
   }
