@@ -502,7 +502,9 @@ var foodTrucks = [
     Twitter: 'https://twitter.com/fticecream'
   }
 ];
-
+function getTrucks(){
+  conslole.log(foodTrucks);
+};
 // this module should support the following methods:
 // getTrucks() - return all trucks
 // getTruck(name) - return the truck object matching 'name'
