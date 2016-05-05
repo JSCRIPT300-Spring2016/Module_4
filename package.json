@@ -1,0 +1,29 @@
+{
+  "name": "food-trucks",
+  "version": "1.0.0",
+  "description": "list food trucks by type, day, or name",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.13.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fushen16/Module_4.git"
+  },
+  "keywords": [
+    "trucks",
+    "food",
+    "type",
+    "day"
+  ],
+  "author": "Fulin Shen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fushen16/Module_4/issues"
+  },
+  "homepage": "https://github.com/fushen16/Module_4#readme"
+}
