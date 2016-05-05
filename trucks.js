@@ -523,15 +523,17 @@ function filterBySchedule(truck, day) {
   }
 }
  
-//filters a list of trucks by their schedule and returns an array of trucks
-//that are available on a certain day
+//filters a list of trucks by their schedule and returns an array of
+//trucks (objects) that are available on a certain day
 var filterTrucksByDay = function(day){
   var filteredTruckArray = foodTrucks.filter(function(truck){
     return filterBySchedule(truck, day);
   });
   var availableFoodTrucks = [];
+  var copyTruck = null;
   for (var i = 0; i < filteredTruckArray.length; i+=1){
-    availableFoodTrucks.push(filteredTruckArray[i].name);
+    copyTruck = Object.assign({}, filteredTruckArray[i]);
+    availableFoodTrucks.push(copyTruck);
   }
   
   return availableFoodTrucks;
@@ -605,15 +607,17 @@ function filterByFoodType(truck, foodType) {
 }
 
 //This method takes one parameter, a string representing a food type.
-//The function returns an array of truck names that serve the
+//The function returns an array of truck objects that serve the
 //provided type of food.
 var filterTrucksByFoodType = function(foodType){
   var filteredTruckArray = foodTrucks.filter(function(truck){
     return filterByFoodType(truck, foodType);
   });
   var potentialFoodTrucks = [];
+  var copyTruck = null;
   for (var i = 0; i < filteredTruckArray.length; i+=1){
-    potentialFoodTrucks.push(filteredTruckArray[i].name);
+    copyTruck = Object.assign({}, filteredTruckArray[i]);
+    potentialFoodTrucks.push(copyTruck);
   }
   
   return potentialFoodTrucks;
