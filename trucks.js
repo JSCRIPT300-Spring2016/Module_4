@@ -503,9 +503,36 @@ var foodTrucks = [
   }
 ];
 
+
+
+/*
+var foodList = trucks.getFoodTypes(
+  for (type in foodTrucks){
+    return foodtrucks[type].toString();
+  }    
+);
+filterTrucksByDay(day)
+
+
+*/
 // this module should support the following methods:
 // getTrucks() - return all trucks
+
 // getTruck(name) - return the truck object matching 'name'
+var getTruck = function (name){
+  var item;
+  for (item in foodTrucks) {
+    return foodTrucks[item.name];
+  }
+};
+var truck = trucks.getTruck('Marination');
 // getFoodTypes() - return unique list of all associated food types (underscore has a function to help)
+var foodList = trucks.getFoodTypes()
 // filterByDay(day) - return trucks with 'day' in schedule (use your filterByDay function from Module 3 homework)
+var openTrucks = trucks.filterTrucksByDay('Saturday');
 // filterByFoodType(foodType) - return trucks with associated 'foodType'
+var foodList = trucks.getFoodTypes()
+
+module.exports = getTruck;
+module.exports = getTruck(name);
+module.exports = getFoodTypes();
