@@ -4,7 +4,8 @@ var foodTrucks = [
     type: ['Sweet and Savory Pies', 'Pie', 'Sweets'],
     schedule: ['Monday', 'Wednesday', 'Thursday'],
     payment: ['Cash', 'Cards'],
-    description: 'We love pies - sweet and savory. We serve them up to the hungry people in Seattle in our fabulous food truck',
+    description: 'We love pies - sweet and savory. We serve them' +
+     'up to the hungry people in Seattle in our fabulous food truck',
     website: 'http://www.314pieseattle.com',
     Facebook: 'https://www.facebook.com/pages/314-PIE/341309415945288',
     Twitter: 'https://twitter.com/314PIESeattle'
@@ -106,6 +107,7 @@ var foodTrucks = [
   {
     name: 'Ben & Jerry\'s',
     type: ['Sweets'],
+    schedule: ['Monday', 'Sunday'],
     payment: ['Cash', 'Cards'],
     description: 'Ice Cream Truck (Two trucks, carts and the CowMobile!)',
     website: 'http://www.wabenjerry.com',
@@ -114,6 +116,7 @@ var foodTrucks = [
   {
     name: 'Big Boys Fillipino Food Truck',
     type: ['Fillipino/American', 'Fillipino'],
+    schedule: ['Monday', 'Sunday'],
     payment: ['Cash', 'Cards'],
     description: 'Bring people together using their sense of Filipino cuisine in a unique and flavorful way',
     Facebook: 'https://www.facebook.com/bigboysfilipinofoodtruck',
@@ -131,6 +134,7 @@ var foodTrucks = [
   {
     name: 'Big Ed\'s Good Eats',
     type: ['Sandwiches'],
+    schedule: ['Monday', 'Sunday'],
     payment: ['Cash', 'Cards'],
     description: 'Steak sandwiches, burgers, pulled pork, beignets, quesadillas, nachos',
     Facebook: 'https://www.facebook.com/BigEdsGoodEats'
@@ -138,6 +142,7 @@ var foodTrucks = [
   {
     name: 'Big House BBQ',
     type: ['BBQ'],
+    schedule: ['Monday', 'Sunday'],
     description: 'All of Big House BBQ\'s meats are slow smoked using seasoned apple wood, and alter from the Great Northwest because LOW and SLOW is the only way to go.',
     website: 'http://www.bighousebbq.net'
   },
@@ -182,6 +187,7 @@ var foodTrucks = [
   {
     name: 'Bite Me Cupcakes',
     type: ['Dessert'],
+    schedule: ['Monday', 'Sunday'],
     payment: ['Cash', 'Cards'],
     description: 'Cupcakes, Gelato and Pastry Truck serving curbside throughout King, Snohomish, Skagit Counties in Wa.',
     website: 'http://www.Bitemecupcakes.us',
@@ -247,6 +253,7 @@ var foodTrucks = [
   {
     name: 'Cake Mobile',
     type: ['Sweets'],
+    schedule: ['Monday', 'Sunday'],
     description: 'Events and festivals, and parked at their building near the Tacoma Dome before and after concerts and Dome events',
     Facebook: 'https://www.facebook.com/celebritycakestudio'
   },
@@ -281,6 +288,7 @@ var foodTrucks = [
   },
   {
     name: 'Chewaya Authentic Moroccan Sanwiches',
+    schedule: ['Monday', 'Sunday'],
     type: ['Moroccan']
   },
   {
@@ -306,6 +314,7 @@ var foodTrucks = [
   {
     name: 'Contigo',
     type: ['Mexican'],
+    schedule: ['Monday', 'Sunday'],
     payment: ['Cash', 'Cards'],
     description: 'Modern Mexican - hand made tortillas and gorditas, all gluten-free',
     website: 'http://www.contigoseattle.com',
@@ -344,6 +353,7 @@ var foodTrucks = [
   },
   {
     name: 'Curbside',
+    schedule: ['Monday', 'Sunday'],
     type: ['Vietnamese']
   },
   {
@@ -357,6 +367,7 @@ var foodTrucks = [
   },
   {
     name: 'Dante\'s Inferno Dogs',
+    schedule: ['Monday', 'Sunday'],
     type: ['Hot Dogs']
   },
   {
@@ -371,6 +382,7 @@ var foodTrucks = [
   {
     name: 'Diablo Food Truckz',
     type: ['Asian'],
+    schedule: ['Monday', 'Sunday'],
     payment: ['Cash'],
     description: 'Serving yakisoba pan (fried noodle sandwiches)',
     Facebook: 'https://www.facebook.com/DiabloFoodTruckz',
@@ -393,6 +405,7 @@ var foodTrucks = [
   {
     name: 'Dogfather Catering',
     type: ['Hot dogs', 'sausages', 'wood fired pizza', 'Pizza'],
+    schedule: ['Monday', 'Sunday'],
     payment: ['Cash', 'Cards'],
     description: 'Hot dogs, sausages and wood-fired pizza',
     Facebook: 'https://www.facebook.com/dogfathercatering',
@@ -401,6 +414,7 @@ var foodTrucks = [
   {
     name: 'Don Lucho\'s',
     type: ['Peruvian Sandwiches', 'Sandwiches'],
+    schedule: ['Monday', 'Sunday'],
     payment: ['Cash', 'Cards'],
     description: 'Latin sandwiches',
     website: 'http://www.donluchosinseattle.com',
@@ -410,6 +424,7 @@ var foodTrucks = [
   {
     name: 'El Animal',
     type: ['Cuban and Argentinian', 'Cuban', 'Argentinian'],
+    schedule: ['Monday', 'Sunday'],
     payment: ['Cash', 'Cards'],
     description: 'Cuban and Argentinian sandwiches and food',
     website: 'http://www.elanimalfoodtruck.com',
@@ -495,6 +510,7 @@ var foodTrucks = [
   {
     name: 'Full Tilt Ice Cream',
     type: ['Sweets'],
+    schedule: ['Monday', 'Sunday'],
     payment: ['Cash', 'Cards'],
     description: 'Handmade ice creams!',
     website: 'http://www.fulltilticecream.com',
@@ -502,6 +518,102 @@ var foodTrucks = [
     Twitter: 'https://twitter.com/fticecream'
   }
 ];
+
+var trucks = (function(){
+  function getTruckByDay(truck,day){
+    if(typeof truck.schedule !== 'undefined' && truck.schedule.indexOf(day) !== -1)
+      return true;
+    else
+      return false;
+  }
+
+  function getTruckByType(truck,foodType){
+    if(typeof truck.type !== 'undefined' && truck.type.indexOf(foodType) !== -1)
+      return true;
+    else
+      return false;
+  }
+
+  function filterTrucksByDay(day){
+    var truckString = '';
+    var trucks = [];
+    if(day !== null){
+      trucks = foodTrucks.filter(function(truck){
+        return getTruckByDay(truck,day);
+      });
+      if(trucks.length === 0){
+        truckString = 'Invalid day entered';
+      }
+      else{
+        for(var x=0; x<trucks.length; x++){
+          truckString = truckString + trucks[x].name + '\n' + '';
+        }
+      }
+    }
+
+    return truckString;
+  }
+
+  function getTrucks(){
+    return foodTrucks;
+  }
+
+  function getTruck(truckName){
+    var truck = null;
+    for(var x=0; x<foodTrucks.length; x++){
+      if(truckName === foodTrucks[x].name){
+        truck = foodTrucks[x];
+        break;
+      }
+    }
+    if(truck === null){
+      truck = 'Truck Not Found';
+    }
+
+    return truck;
+  }
+
+  function getFoodTypes(){
+    var truck = '';
+    for(var x=0; x<foodTrucks.length; x++){
+      truck = truck + foodTrucks[x].type + '\n';
+    }
+
+    return truck;
+  }
+
+  function filterByFoodType(foodType){
+    var truckString = '';
+    var trucks = [];
+    if(foodType !== null){
+      trucks = foodTrucks.filter(function(truck){
+        return getTruckByType(truck,foodType);
+      });
+      if(trucks.length === 0){
+        truckString = 'Food Type not found';
+      }
+      else{
+        for(var x=0; x<trucks.length; x++){
+          truckString = truckString + trucks[x].name + '\n' + '';
+        }
+      }
+
+      return truckString;
+    }
+  }
+
+  return {
+    getTrucks : getTrucks,
+    getTruck : getTruck,
+    getFoodTypes : getFoodTypes,
+    filterTrucksByDay : filterTrucksByDay,
+    filterByFoodType : filterByFoodType
+  };
+
+})();
+
+
+module.exports = trucks;
 
 // this module should support the following methods:
 // getTrucks() - return all trucks
