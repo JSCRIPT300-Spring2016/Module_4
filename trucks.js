@@ -1,3 +1,11 @@
+
+/*eslint-env node*/
+
+//underscore
+var _ = require('underscore');
+
+/*eslint-disable */
+
 var foodTrucks = [
   {
     name: '314 PIE',
@@ -209,7 +217,7 @@ var foodTrucks = [
   {
     name: 'Buddha Bruddah',
     type: ['Asian'],
-    schedule: ['Monday', 'Tuesday','Wednesday','Thursday', 'Friday'],
+    schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
     payment: ['Cash', 'Cards'],
     description: 'Gourmet Asian mixed plates',
     website: 'http://www.buddhabruddah.com',
@@ -262,7 +270,7 @@ var foodTrucks = [
   {
     name: 'Charlie\'s',
     type: ['Burgers/Cheesesteaks', 'Burgers'],
-    schedule: ['Monday', 'Tuesday', 'Wednesday','Thursday'],
+    schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'],
     payment: ['Cash', 'Cards'],
     description: 'A fresh take on American diner fare',
     website: 'http://www.charliesbunsnstuff.com',
@@ -503,9 +511,57 @@ var foodTrucks = [
   }
 ];
 
+/*eslint-enable */
+
 // this module should support the following methods:
-// getTrucks() - return all trucks
-// getTruck(name) - return the truck object matching 'name'
-// getFoodTypes() - return unique list of all associated food types (underscore has a function to help)
-// filterByDay(day) - return trucks with 'day' in schedule (use your filterByDay function from Module 3 homework)
-// filterByFoodType(foodType) - return trucks with associated 'foodType'
+
+// public: getTrucks() - return all trucks
+function getTrucks() {
+    //return all trucks
+  return foodTrucks;
+}
+
+// public: getTruck(name) - return the truck object matching 'name'
+function getTruck(truckName) {
+    //find the truck name
+  return _.findWhere(foodTrucks, { name: truckName });
+}
+
+// public: getFoodTypes() - return unique list of all
+// associated food types (underscore has a function to help)
+function getFoodTypes() {
+    //use underscore to get the list of types
+  return _.uniq(_.flatten(_.pluck(foodTrucks, 'type'))).sort();
+}
+
+// public: filterByDay(day) - return trucks with 'day' in schedule
+// (use your filterByDay function from Module 3 homework)
+function filterByDay(day) {
+    //loop and filter the truck array
+  return foodTrucks.filter(function (truck) {
+    return truck.schedule.indexOf(day) !== -1;
+  });
+}
+
+//public: filterByFoodType(foodType) - return trucks with associated 'foodType'
+function filterByFoodType(foodType) {
+    //loop and find in the truck array
+  return foodTrucks.filter(function (truck) {
+    return truck.type.find(function (type) {
+      return type.toLowerCase() === foodType.toLowerCase();
+    });
+  });
+
+}
+
+//expose public stuff
+var publicStuff = {
+  getTrucks: getTrucks,
+  getTruck: getTruck,
+  getFoodTypes: getFoodTypes,
+  filterByDay: filterByDay,
+  filterByFoodType: filterByFoodType
+};
+
+//export
+module.exports = publicStuff;
