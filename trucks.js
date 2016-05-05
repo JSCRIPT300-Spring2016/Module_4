@@ -615,13 +615,18 @@ filterByDay = function (day) {
 };
 
 filterByFoodType = function (foodType) {
+  var inType = foodType.toLowerCase();
   var truckNameList = '';
   var i = 0;
   var length = foodTrucks.length;
   for( i = 0; i < length; i++) {
     var foodTypeList = [];
+    var tmpLowerCase_1;
+    var tmpLowerCase_2;
     foodTypeList = foodTrucks[i].type;
-    if(foodTypeList.indexOf(foodType) !== -1) {
+    tmpLowerCase_1 = foodTypeList.join('~').toLowerCase();
+    tmpLowerCase_2 = tmpLowerCase_1.split('~');
+    if(tmpLowerCase_2.indexOf(inType) !== -1) {
       truckNameList = truckNameList + foodTrucks[i].name + ', ';
     }
   }
