@@ -7,11 +7,7 @@ module.exports = {
         "google": true,
         "result": true,
         "module": true,
-        "round": true,
-        "today": true,
-        "date": true,
-        "dayName": true,
-        "monthName": true
+        "round": true
         
      },
     "extends": "eslint:recommended",
