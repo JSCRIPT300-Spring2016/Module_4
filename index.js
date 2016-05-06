@@ -5,7 +5,6 @@ var serveStatic = express.static( 'public' );
 
 app.use( serveStatic );
 
-//This route returns the list of all trucks in the module.
 app.get( '/trucks', function( request, response ) {
 
   var allTrucks = trucks.getTrucks();

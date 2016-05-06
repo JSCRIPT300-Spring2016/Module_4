@@ -630,16 +630,3 @@ module.exports.getTruck = getTruck;
 module.exports.getFoodTypes = getFoodTypes;
 module.exports.filterByDay = filterByDay;
 module.exports.filterByFoodType = filterByFoodType;
-
-
-
-
-
-
-
-/*
-  1. go through truck array for each object
-  2. view array on object  ex. typeArr = arr[i].type;
-  3. var item = typeArr[i].toLowerCase();
-  4. if item
-*/
