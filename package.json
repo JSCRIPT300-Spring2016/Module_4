@@ -1,0 +1,14 @@
+{
+  "name": "my_project1",
+  "version": "1.0.0",
+  "description": "create an express application - use the middle-ware built into express",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emma Luk",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.4"
+  }
+}
