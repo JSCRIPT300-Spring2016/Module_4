@@ -545,7 +545,7 @@ module.exports = {
 
     }
 
-    if (foundTruck == 0) {
+    if (foundTruck === 0) {
       return (truck + ' truck not found');
     }
 
@@ -560,23 +560,23 @@ module.exports = {
     return types;
   },
 
-  filterTrucksByDay: function (day) {
-    var trucksToday = [];
-
-    function checkTruck(testArray) {
-      // element of Food Truck array of days vs. testArray
-      return testArray == day;
+  filterTrucksByDay: function(day) {
+    if (day) {
+      var dayToCheck = day;
     }
 
+    var trucksToday = [];
+    console.log('Day to check ' + dayToCheck);
     for (var i = 0; i < foodTrucks.length; i++) {
-      var testArray = foodTrucks[i].schedule;
-      if (testArray) {
-        var truckStatus = testArray.filter(checkTruck);
+      var truckDays = [];
+      truckDays = foodTrucks[i].schedule;
 
-        if (truckStatus == day) {
-          console.log(foodTrucks[i].name);
-          // push to an array
-          trucksToday.push(foodTrucks[i].name);
+      if (truckDays) {
+        for (var j = 0; j < truckDays.length; j++) {
+          if (truckDays[j] === dayToCheck) {
+            // push to an array
+            trucksToday += foodTrucks[i].name + '\n';
+          }
         }
       }
     }
@@ -596,7 +596,7 @@ module.exports = {
 
     for (var i = 0; i < foodTrucks.length; i++) {
 
-      if (foodTrucks[i].type == foodType) {
+      if (foodTrucks[i].type === foodType) {
         // console.log("Found!" + foodTrucks[i].type);
         trucksOfType += foodTrucks[i].type + ' -> ' + foodTrucks[i].name + '\n';
         foundType = 1;
@@ -604,7 +604,7 @@ module.exports = {
 
     }
 
-    if (foundType == 0) {
+    if (foundType === 0) {
       return (foodType + ' type not found');
     }
     else {
