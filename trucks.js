@@ -612,3 +612,49 @@ var foodTrucks = [
     Twitter: 'https://twitter.com/fticecream'
   }
 ];
+
+var _ = require('lodash');
+
+function getTrucks(){
+  return foodTrucks;
+}
+
+function getTruck(name){
+  return foodTrucks.find(function(truck){
+    return truck.name === name;
+  });
+}
+
+function getFoodTypes(){
+  var types = foodTrucks.map(function (truck){
+    return truck.type;
+  });
+  types = _.flatten(types);
+  types = _.uniq(types);
+  
+  return types;
+}
+
+function filterTrucksByDay(day){
+  return foodTrucks.filter(function (truck){
+    return truck.schedule.indexOf(day) > -1;
+  });
+}
+
+function filterTrucksByFoodType(foodType){
+  return foodTrucks.filter(function (truck){
+    var types = truck.type.map(function (type){
+      return type.toLowerCase();
+    });
+    
+    return types.indexOf(foodType.toLowerCase()) > -1;
+  });
+}
+
+module.exports = {
+  getTrucks: getTrucks,
+  getTruck: getTruck,
+  getFoodTypes: getFoodTypes,
+  filterTrucksByDay: filterTrucksByDay,
+  filterTrucksByFoodType: filterTrucksByFoodType
+};

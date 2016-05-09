@@ -1,38 +1,31 @@
 var express = require('express');
-var app = express();
 var trucks = require('./trucks');
-//
-var truckList = trucks.getTrucks();
-function getTrucks(){
-  return trucks.foodTrucks;
-}
-//
-var truck = trucks.getTruck();
-function getTruck(){
-  return getTrucks.name;
-}
-//
-var foodList = trucks.getFoodTypes();
-function getFoodTypes(){
-  var foodTypes = [];
-  var foodType = trucks.type;
-  for (var i = 0; i< trucks.length; i++){
-    if(foodType[i] !== foodTypes[i]){
-      foodTypes.push(foodType);
-    }
-    else{
-      return;
-    }
-  }
-  
-  return foodTypes;
-}
-//
 
-app.get('/trucks', function (request, response){
-  response.write(truckList);
-  response.write(getTruck);
-  response.write(foodList);
+var app = express();
+
+app.get('/trucks', function(request, response){
+  var truckList = trucks.getTrucks();
+  
+  response.send(truckList);
+});
+
+app.get('/trucks/:name', function(request, response){
+  var truck = trucks.getTruck(request.params.name);
+  
+  response.send(truck);
+});
+
+app.get('/food-types', function(request, response){
+  var foodList = trucks.getFoodTypes();
+  
+  response.send(foodList);
+});
+
+app.get('/food-types/:type', function (request, response){
+  var type = request.params.type;
+  var truckList = trucks.filterTrucksByFoodType(type);
+  
+  response.send(truckList);
 });
 
 app.listen(3000);
