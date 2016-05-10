@@ -1,0 +1,23 @@
+{
+  "name": "module_4",
+  "version": "1.0.0",
+  "description": "assignment4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/h2doan/Module_4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/h2doan/Module_4/issues"
+  },
+  "homepage": "https://github.com/h2doan/Module_4#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "underscore": "^1.8.3"
+  }
+}

@@ -1,3 +1,18 @@
+/*************************************************************************
+* Name       : Huan Doan
+* Course     : JavaScript 300
+* Assignment : 4
+* Description: Extend the trucks module to provide the following methods:
+*              getTrucks() - return all trucks
+*              getTruck(name) - return the truck object matching 'name'
+*              getFoodTypes() - return unique list of all associated food
+*                types (underscore has a function to help)
+*              filterTrucksByDay(day) - return trucks with 'day' in schedule
+*                (use your filterTrucksByDay function from Module 3 homework)
+*              filterTrucksByFoodType(foodType) - return trucks with
+*                associated 'foodType'
+*************************************************************************/
+var stuffFromUnderscore = require('underscore');
 var foodTrucks = [
   {
     name: '314 PIE',
@@ -503,9 +518,138 @@ var foodTrucks = [
   }
 ];
 
-// this module should support the following methods:
-// getTrucks() - return all trucks
-// getTruck(name) - return the truck object matching 'name'
-// getFoodTypes() - return unique list of all associated food types (underscore has a function to help)
-// filterByDay(day) - return trucks with 'day' in schedule (use your filterByDay function from Module 3 homework)
-// filterByFoodType(foodType) - return trucks with associated 'foodType'
+/*************************************************************************
+* Description : getTrucks() - return all trucks
+* Parameters  : None
+* Return      : Array of trucks
+*************************************************************************/
+var getTrucks = function () {
+  var trucks = [];
+
+  foodTrucks.forEach(function(currentTruck) {
+    trucks.push(currentTruck);
+  });
+
+  return trucks;
+};
+
+/*************************************************************************
+* Description : getTruck(name) - return the truck object matching 'name'
+* Parameters  : name - a string
+* Return      : truck object matching 'name'
+*************************************************************************/
+var getTruck = function (name) {
+  var truck = null;
+
+  // Set nameRegExpr to '/value of name/i' to search for 'value of name'
+  // ignoring case.
+  var nameRegExpr = new RegExp(name, 'i');
+
+  // Use the Array.prototype.find function to find the specified 'name'
+  // truck, ignoring case, in the foodTrucks array.
+  truck = foodTrucks.find(function (currentTruck) {
+    return nameRegExpr.test(currentTruck.name);
+  });
+
+  return truck;
+};
+
+/*************************************************************************
+* Description : getFoodTypes() - return unique list of all associated food
+*               types (underscore has a function to help)
+* Parameters  : None
+* Return      : unique list (array) of all associated food types
+*************************************************************************/
+var getFoodTypes = function () {
+  var foodTypes = [];
+  var tempFoodTypeArr = [];
+  var flattenedFoodTypeArr = [];
+
+  foodTrucks.forEach(function (currentTruck) {
+    if ((currentTruck.type) && (currentTruck.type.length > 0)) {
+      tempFoodTypeArr.push(currentTruck.type);
+    }
+  });
+
+  flattenedFoodTypeArr = stuffFromUnderscore.flatten(tempFoodTypeArr);
+  foodTypes = stuffFromUnderscore.uniq(flattenedFoodTypeArr);
+  foodTypes.sort();
+  
+  return foodTypes;
+};
+
+/*************************************************************************
+* Description : filterTrucksByDay(day) - return trucks with 'day' in
+*               schedule
+* Parameters  : day - a string
+* Return      : Array of trucks with 'day' in their schedule
+*************************************************************************/
+var filterTrucksByDay = function (day) {
+  var trucks = [];
+  var dayMatched;
+
+  // Set dayRegExpr to '/value of day/i' to search for 'value of day'
+  // ignoring case.
+  var dayRegExpr = new RegExp(day, 'i');
+  
+  trucks = foodTrucks.filter(function (currentTruck) {
+    if ((currentTruck.schedule) && (currentTruck.schedule.length > 0)) {
+      // Use the Array.prototype.find function to find the specified 'day',
+      // ignoring case, in the current truck's schedule.
+      dayMatched = currentTruck.schedule.find(function (currentDay) {
+        return dayRegExpr.test(currentDay);
+      });
+
+      // If there is a match, dayMatched contains the value of the
+      // matched element in the current truck's schedule array. Otherwise,
+      // dayMatched contains 'undefined'.
+      if (dayMatched) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  });
+
+  return trucks;
+};
+
+/*************************************************************************
+* Description : filterTrucksByFoodType(foodType) - return trucks with
+*               associated 'foodType'
+* Parameters  : foodType - a string
+* Return      : Array of trucks that sell 'foodType'
+*************************************************************************/
+var filterTrucksByFoodType = function (foodType) {
+  var trucks = [];
+  var foodTypeMatched;
+  // Set foodTypeRegExpr to '/value of foodType/i' to search for
+  // 'value of foodType' ignoring case.
+  var foodTypeRegExpr = new RegExp(foodType, 'i');
+
+  trucks = foodTrucks.filter(function (currentTruck) {
+    if ((currentTruck.type) && (currentTruck.type.length > 0)) {
+      foodTypeMatched = currentTruck.type.find(function (currentFoodType) {
+        return foodTypeRegExpr.test(currentFoodType);
+      });
+    }
+    if (foodTypeMatched) {
+      return true;
+    } else {
+      return false;
+    }
+  });
+
+  return trucks;
+};
+
+// Revealing model anonymous object
+var trucksXportMethods = {
+  getTrucks: getTrucks,
+  getTruck: getTruck,
+  getFoodTypes: getFoodTypes,
+  filterTrucksByDay: filterTrucksByDay,
+  filterTrucksByFoodType: filterTrucksByFoodType
+};
+
+module.exports = trucksXportMethods;
