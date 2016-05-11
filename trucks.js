@@ -1,5 +1,5 @@
 'use strict';
-
+var _ = require('lodash');
 var foodTrucks = [
   {
     name: '314 PIE',
@@ -507,19 +507,14 @@ var foodTrucks = [
 
 // this module should support the following methods: getTrucks() - return all trucks
 var getTrucks = function() {
-  var allTrucks = [];
-  for (var i = 0; i < foodTrucks.length; i++) {
-    allTrucks.push(foodTrucks[i].name );
-  }
-
-  return allTrucks;
+  return foodTrucks;
 };
 
 // getTruck(name) - return the truck object matching 'name'
 var getTruck = function(name) {
   var thisTruck =[];
   for (var i = 0; i < foodTrucks.length; i++) {
-    var nameOfTruck = foodTrucks[i].name.toString();
+    var nameOfTruck = foodTrucks[i].name;
     if (name === nameOfTruck) {
       thisTruck.push( foodTrucks[i]);
     }
@@ -532,11 +527,13 @@ var getTruck = function(name) {
 var getFoodTypes = function() {
   var foodType =[];
   for (var i = 0; i < foodTrucks.length; i++) {
-    var typeOfFood = foodTrucks[i].type.toString();
+    var typeOfFood = foodTrucks[i].type;
     foodType.push( typeOfFood );
   }
+  var flatten = _.flatten(foodType);
+  var uniq = _.uniq(flatten);
 
-  return foodType;
+  return uniq;
 };
 
 
@@ -560,15 +557,17 @@ var filterByDay = function(day) {
 
 // filterByFoodType(foodType) - return trucks with associated 'foodType'
 var filterByFoodType = function(foodType) {
-  var typeList =[];
+  var truckList =[];
   for (var i = 0; i < foodTrucks.length; i++) {
-    var typeOfFood = foodTrucks[i].type.toString();
-    if (foodType === typeOfFood) {
-      typeList.push( foodTrucks[i].name );
+    for(var e = 0; e < foodTrucks[i].type.length; e++){
+      var foodTruckType = foodTrucks[i].type[e];
+      if (foodType === foodTruckType) {
+        truckList.push( foodTrucks[i]);
+      }
     }
   }
 
-  return typeList;
+  return truckList;
 };
 
 
