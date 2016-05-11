@@ -58,7 +58,7 @@ app.get("/trucks/:name", function (request, response) {
 	}
 });
 
-app.get("/food-trucks", function (request, response) {
+app.get("/food-types", function (request, response) {
 
 	var foodTypeList = trucks.getFoodTypes();
 
@@ -76,7 +76,7 @@ app.get("/food-trucks", function (request, response) {
 	}
 });
 
-app.get("/food-trucks/:type", function (request, response) {
+app.get("/food-types/:type", function (request, response) {
 
 	var truckList = trucks.filterByFoodType(request.params.type);
 
