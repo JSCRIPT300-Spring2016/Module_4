@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/JSCRIPT300-Spring2016/Module_4#readme",
   "dependencies": {
+    "express": "^4.13.4",
     "underscore": "1.8.3"
   }
 }
