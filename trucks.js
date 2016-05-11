@@ -1,10 +1,12 @@
+'use strict';
+var _ = require('lodash');
 var foodTrucks = [
   {
     name: '314 PIE',
     type: ['Sweet and Savory Pies', 'Pie', 'Sweets'],
     schedule: ['Monday', 'Wednesday', 'Thursday'],
     payment: ['Cash', 'Cards'],
-    description: 'We love pies - sweet and savory. We serve them up to the hungry people in Seattle in our fabulous food truck',
+    description: 'We love pies - sweet and savory.We serve them up to the hungry people in Seattle in our fabulous food truck',
     website: 'http://www.314pieseattle.com',
     Facebook: 'https://www.facebook.com/pages/314-PIE/341309415945288',
     Twitter: 'https://twitter.com/314PIESeattle'
@@ -503,9 +505,79 @@ var foodTrucks = [
   }
 ];
 
-// this module should support the following methods:
-// getTrucks() - return all trucks
+// this module should support the following methods: getTrucks() - return all trucks
+var getTrucks = function() {
+  return foodTrucks;
+};
+
 // getTruck(name) - return the truck object matching 'name'
+var getTruck = function(name) {
+  var thisTruck =[];
+  for (var i = 0; i < foodTrucks.length; i++) {
+    var nameOfTruck = foodTrucks[i].name;
+    if (name === nameOfTruck) {
+      thisTruck.push( foodTrucks[i]);
+    }
+  }
+
+  return thisTruck;
+};
+
 // getFoodTypes() - return unique list of all associated food types (underscore has a function to help)
+var getFoodTypes = function() {
+  var foodType =[];
+  for (var i = 0; i < foodTrucks.length; i++) {
+    var typeOfFood = foodTrucks[i].type;
+    foodType.push( typeOfFood );
+  }
+  var flatten = _.flatten(foodType);
+  var uniq = _.uniq(flatten);
+
+  return uniq;
+};
+
+
 // filterByDay(day) - return trucks with 'day' in schedule (use your filterByDay function from Module 3 homework)
+var filterByDay = function(day) {
+  var truckList =[];
+  for (var i = 0; i < foodTrucks.length; i++) {
+    if (foodTrucks[i].schedule) {
+      for (var e = 0; e < foodTrucks[i].schedule.length; e++) {
+        var dayOfTruck = foodTrucks[i].schedule[e];
+        if (dayOfTruck === day) {
+
+          truckList.push( foodTrucks[i].name );
+        }
+      }
+    }
+  }
+
+  return truckList;
+};
+
 // filterByFoodType(foodType) - return trucks with associated 'foodType'
+var filterByFoodType = function(foodType) {
+  var truckList =[];
+  for (var i = 0; i < foodTrucks.length; i++) {
+    for(var e = 0; e < foodTrucks[i].type.length; e++){
+      var foodTruckType = foodTrucks[i].type[e];
+      if (foodType === foodTruckType) {
+        truckList.push( foodTrucks[i]);
+      }
+    }
+  }
+
+  return truckList;
+};
+
+
+
+var myTruckModule = {
+  getTrucks: getTrucks,
+  getTruck: getTruck,
+  getFoodTypes: getFoodTypes,
+  filterByDay: filterByDay,
+  filterByFoodType: filterByFoodType
+};
+
+module.exports = myTruckModule;
