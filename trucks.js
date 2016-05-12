@@ -503,36 +503,48 @@ var foodTrucks = [
   }
 ];
 
+var _ = require('lodash');
 
+function getTrucks() {
+  return foodTrucks;
+}
 
-/*
-var foodList = trucks.getFoodTypes(
-  for (type in foodTrucks){
-    return foodtrucks[type].toString();
-  }    
-);
-filterTrucksByDay(day)
+function getTruck(name) {
+  return foodTrucks.find(function(truck){
+    return truck.name === name;
+  });
+}
 
+function getFoodTypes() {
+  var types = foodTrucks.map(function(truck){
+    return truck.type;
+  });
+  types = _.flatten(types);
+  types = _.uniq(types);
 
-*/
-// this module should support the following methods:
-// getTrucks() - return all trucks
+  return types;
+}
 
-// getTruck(name) - return the truck object matching 'name'
-var getTruck = function (name){
-  var item;
-  for (item in foodTrucks) {
-    return foodTrucks[item.name];
-  }
+function filterTrucksByDay(day) {
+  return foodTrucks.filter(function(truck){
+    return truck.schedule.indexOf(day) > -1;
+  });
+}
+
+function filterTrucksByFoodType(foodType) {
+  return foodTrucks.filter(function(truck) {
+    var types = truck.type.map(function(type) {
+      return type.toLowerCase();
+    });
+
+    return types.indexOf(foodType.toLowerCase()) > -1;
+  });
+}
+
+module.exports = {
+  getTrucks: getTrucks,
+  getTruck: getTruck,
+  getFoodTypes: getFoodTypes,
+  filterTrucksByDay: filterTrucksByDay,
+  filterTrucksByFoodType: filterTrucksByFoodType
 };
-var truck = trucks.getTruck('Marination');
-// getFoodTypes() - return unique list of all associated food types (underscore has a function to help)
-var foodList = trucks.getFoodTypes()
-// filterByDay(day) - return trucks with 'day' in schedule (use your filterByDay function from Module 3 homework)
-var openTrucks = trucks.filterTrucksByDay('Saturday');
-// filterByFoodType(foodType) - return trucks with associated 'foodType'
-var foodList = trucks.getFoodTypes()
-
-module.exports = getTruck;
-module.exports = getTruck(name);
-module.exports = getFoodTypes();

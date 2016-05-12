@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/tamanduaa/Module_4#readme",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "lodash": "^4.12.0"
   }
 }
