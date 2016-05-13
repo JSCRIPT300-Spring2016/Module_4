@@ -1,4 +1,73 @@
-//  in this file create an express application - use the middle-ware built into express
-//  to serve up static files from the public directory (index.html and client.js - you 
-//  can also serve up css files from the public directory this way if you want)
-//  you need to support a '/trucks' endpoint, and a dynamic route for '/trucks/:name'
+//Homework: Katja Borchert
+//Express Node Server
+
+var express = require('express');
+var app = express();
+
+//bind node modules to the following variables:
+var trucks = require('./trucks');
+
+// "static" middle-ware function
+var serveStatic = express.static('public');
+app.use(serveStatic);
+
+//This route returns the list of all trucks in the module.
+//returns error 404 if truck list is empty or undefined
+app.get('/trucks', function (request, response) {
+  var truckList = trucks.getTrucks();
+  if (truckList.length === 0 || truckList === undefined){
+    response.status(404).json('no truck list found');
+  } else {
+    response.send(truckList);
+  }
+});
+
+//This route returns a single truck object that matches the
+//name parameter passed in the route.
+app.get('/trucks/:name', function (request, response) {
+  var truck = request.params.name;
+  var targetTruck = trucks.getTruck(truck);
+
+  //targetTruck will be null if no food truck matches the 'name'
+  if (targetTruck === null) {
+    response.status(404).json('no truck of the name ' +
+      truck + ' found.');
+  } else {
+    response.send(targetTruck);
+  }
+});
+
+//This route returns the list of all possible food types served
+//by trucks in the module
+app.get('/food-types', function (request, response) {
+  var foodArray = trucks.getFoodTypes();
+  
+  //foodArray will be an empty array if no food types are found
+  //in the data base
+  if (foodArray.length === 0){
+    response.status(404).json('no food list found');
+  } else {
+    response.send(foodArray);
+  }
+});
+
+//This route returns the list of all trucks that serve the food
+//type that matches (case insensitive) the type parameter
+//passed in the route.
+app.get('/food-types/:type', function (request, response) {
+  var foodType = request.params.type;
+  var foodTrucks = trucks.filterTrucksByFoodType(foodType);
+  
+  //foodTrucks will be an empty array if no match is found
+  if (foodTrucks.length === 0){
+    response.status(404).json('no food trucks found that serve ' + foodType);
+  } else {
+    response.send(foodTrucks);
+  }
+});
+
+app.listen(3000, function () {
+/* eslint-disable no-console */
+  console.log('server started on port 3000');
+/* eslint-enable no-console */
+});

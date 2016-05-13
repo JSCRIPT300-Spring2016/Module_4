@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 var foodTrucks = [
   {
     name: '314 PIE',
@@ -509,3 +510,125 @@ var foodTrucks = [
 // getFoodTypes() - return unique list of all associated food types (underscore has a function to help)
 // filterByDay(day) - return trucks with 'day' in schedule (use your filterByDay function from Module 3 homework)
 // filterByFoodType(foodType) - return trucks with associated 'foodType'
+
+/* eslint-enable max-len */
+
+//function returns true if the currently checked truck is available
+//on the target day
+function filterBySchedule(truck, day) {
+  if (truck.schedule.indexOf(day) !== -1) {
+    return true;
+  } else {
+    return false;
+  }
+}
+ 
+//filters a list of trucks by their schedule and returns an array of
+//trucks (objects) that are available on a certain day
+var filterTrucksByDay = function(day){
+  var filteredTruckArray = foodTrucks.filter(function(truck){
+    return filterBySchedule(truck, day);
+  });
+  var availableFoodTrucks = [];
+  var copyTruck = null;
+  for (var i = 0; i < filteredTruckArray.length; i+=1){
+    copyTruck = Object.assign({}, filteredTruckArray[i]);
+    availableFoodTrucks.push(copyTruck);
+  }
+  
+  return availableFoodTrucks;
+};
+
+//function takes no parameters and
+//returns a copy of the truck list
+var getTrucks = function(){
+  var cloneTrucks = foodTrucks.slice(0);
+
+  return cloneTrucks;
+};
+
+//function takes one string parameter and
+//returns a copy of the requested truck object
+//if no truck of the given name is found, 'null' will be returned
+var getTruck = function(name){
+  var copyTruck = null;
+  for (var i = 0; i < foodTrucks.length; i+= 1){
+    if (foodTrucks[i].name === name){
+      copyTruck = Object.assign({}, foodTrucks[i]);
+      break;
+    }
+  }
+
+  return copyTruck;
+};
+
+//getFoodTypes` This method takes no parameters and returns
+//an array of all the food types offered by the various trucks
+var getFoodTypes = function(){
+  var foodList = [];
+  //cycle through all trucks
+  for (var i = 0; i < foodTrucks.length; i += 1){
+    //cycle through all food types of each truck
+    for (var j = 0; j <foodTrucks[i].type.length; j += 1){
+      //in case a food type is found that hasn't been
+      //encountered yet, add it to the list
+      if (foodList.indexOf(foodTrucks[i].type[j])=== -1){
+        foodList.push(foodTrucks[i].type[j]);
+      }
+    }
+  }
+
+  return foodList;
+};
+
+//function takes two parameters, a truck object
+//and a string representing a food type
+//function returns true if the currently checked truck offers
+//the target food type (case insensitive)
+function filterByFoodType(truck, foodType) {
+
+ //make a copy of the truck
+ //and capitalize all letters for the food types
+  var copyTruck = Object.assign({}, truck);
+  var copyTruckFoodArray = [];
+ 
+  for (var i = 0; i < copyTruck.type.length; i+=1){
+    copyTruckFoodArray.push(copyTruck.type[i].toUpperCase());
+  }
+ //capitalize all letters in the target foodtype
+  foodType = foodType.toUpperCase();
+ 
+ //now the comparison is case insensitive:
+  if (copyTruckFoodArray.indexOf(foodType) !== -1) {
+    return true;
+  } else {
+    return false;
+  }
+}
+
+//This method takes one parameter, a string representing a food type.
+//The function returns an array of truck objects that serve the
+//provided type of food.
+var filterTrucksByFoodType = function(foodType){
+  var filteredTruckArray = foodTrucks.filter(function(truck){
+    return filterByFoodType(truck, foodType);
+  });
+  var potentialFoodTrucks = [];
+  var copyTruck = null;
+  for (var i = 0; i < filteredTruckArray.length; i+=1){
+    copyTruck = Object.assign({}, filteredTruckArray[i]);
+    potentialFoodTrucks.push(copyTruck);
+  }
+  
+  return potentialFoodTrucks;
+};
+
+var myObj = {
+  filterTrucksByDay: filterTrucksByDay,
+  filterTrucksByFoodType: filterTrucksByFoodType,
+  getFoodTypes: getFoodTypes,
+  getTruck: getTruck,
+  getTrucks: getTrucks
+};
+
+module.exports = myObj;
