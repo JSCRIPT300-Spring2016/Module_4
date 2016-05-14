@@ -1,0 +1,25 @@
+{
+  "name": "mod4",
+  "version": "1.0.0",
+  "description": "homeworks",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "lodash": "^4.12.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/heidiflammable/Module_4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/heidiflammable/Module_4/issues"
+  },
+  "homepage": "https://github.com/heidiflammable/Module_4#readme"
+}
