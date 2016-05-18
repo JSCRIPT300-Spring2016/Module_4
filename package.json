@@ -1,0 +1,22 @@
+{
+  "name": "module4",
+  "version": "1.0.0",
+  "description": "Week 4",
+  "main": "index.js",
+  "dependencies": {},
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasong-peakbagger/Module_4.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasong-peakbagger/Module_4/issues"
+  },
+  "homepage": "https://github.com/jasong-peakbagger/Module_4#readme"
+}
