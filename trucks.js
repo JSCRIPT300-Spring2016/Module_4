@@ -1,4 +1,4 @@
-var _ = require("underscore");
+var _ = require("lodash");
 var foodTrucks = [
   {
     name: '314 PIE',
