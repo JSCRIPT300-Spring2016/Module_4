@@ -11,19 +11,12 @@
 
 var express = require('express');
 var trucks = require('./trucks');
-var foodTypes = require('./trucks');
-var openTrucks = require('./trucks');
-var typeTrucks = require('./trucks');
+
 /* eslint-enable no-unused-vars */
 /* eslint-enable no-undef */
 
-
 var app = express();
 var serveStatic = express.static('public');
-
-var openTruck = trucks.filterTrucksByDay('Saturday');
-var pizzaTruckList = trucks.filterTrucksByFoodType('pizza');
-
 app.use(serveStatic);
 
 /* eslint-disable no-console */
@@ -50,18 +43,18 @@ app.get('/trucks', function (request, response, next) {
 // the name parameter passed in the route.
 // http://127.0.0.1:3000/trucks:Fez
 app.get('/trucks/:name', function (request, response, next) {
-    var truckReq = request.params.name;
-    console.log('request[' + truckReq + ']');
-    var truck = trucks.getTruck(truckReq);
+  var truckReq = request.params.name;
+  console.log('request[' + truckReq + ']');
+  var truck = trucks.getTruck(truckReq);
 
-    //var foodTruck = truckReq[0].toUpperCase + truckReq.slice(1).toLowerCase();
+  //var foodTruck = truckReq[0].toUpperCase + truckReq.slice(1).toLowerCase();
 
-    if (!truck) {
-        response.status(404).json('No food type found for ' + truck)
-    } else {
-        response.send(truck);
-    }
-    next();
+  if (!truck) {
+    response.status(404).json('No food type found for ' + truck);
+  } else {
+    response.send(truck);
+  }
+  next();
 });
 
 //  `/food-types` This route returns the list of all possible food types
@@ -82,11 +75,10 @@ app.get('/food-types/:type', function (request, response, next) {
   console.log('request[' + typeReq + ']');
   var type = trucks.filterTrucksByFoodType(typeReq);
   if (!type) {
-    response.status(404).json('No food type found for ' + type)
+    response.status(404).json('No food type found for ' + type);
   } else {
     response.send(type);
   }
-  
   next();
 });
 
@@ -94,11 +86,6 @@ app.get('/food-types/:type', function (request, response, next) {
 app.get('/openTrucks', function (request, response) {
   var openTruck = trucks.filterTrucksByDay('Saturday');
   response.send(openTruck);
-});
-
-// var typeTrucks = require('./trucks');
-app.get('/typeTrucks', function (request, response) {
-  response.send(pizzaTruckList);
 });
 
 app.listen(3000, function () {
