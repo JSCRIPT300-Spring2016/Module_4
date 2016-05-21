@@ -521,12 +521,7 @@ module.exports = {
   /* eslint-enable no-undef */
 
   getTrucks: function () {
-    var trucks;
-    for (var i = 0; i < foodTrucks.length; i++) {
-      trucks += foodTrucks[i].name + ' :: ' + '\n';
-    }
-
-    return trucks;
+    return foodTrucks;
   },
 
   getTruck: function (truck) {
@@ -572,20 +567,22 @@ module.exports = {
       if (truckDays) {
         for (var j = 0; j < truckDays.length; j++) {
           if (truckDays[j] === dayToCheck) {
-            // push to an array
+            // var gotTruck = foodTrucks[i];
+            // push to an array returns Object[object]
+            // return gotTruck;
             trucksToday += foodTrucks[i].name + '\n';
+            // trucksToday += gotTruck;
           }
         }
       }
     }
+    /* eslint-disable newline-before-return */
 
     return trucksToday;
   },
 
   filterTrucksByFoodType: function (foodType) {
     var foundType = 0;
-    var trucksOfType = [];
-
     foodType = foodType.charAt(0).toUpperCase() + foodType.slice(1);
     console.log('Looking for: ' + foodType);
 
@@ -600,7 +597,8 @@ module.exports = {
 
     if (foundType === 0) {
       console.log('Customer could not find this food: ' + foodType);
+
       return (foodType + ' type not found');
     }
-  }
-}
+  },
+};
