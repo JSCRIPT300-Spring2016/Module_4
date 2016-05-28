@@ -1,3 +1,7 @@
+'use strict';
+
+/* eslint-disable max-len */
+/* eslint-disable comma-dangle */
 var foodTrucks = [
   {
     name: '314 PIE',
@@ -7,7 +11,7 @@ var foodTrucks = [
     description: 'We love pies - sweet and savory. We serve them up to the hungry people in Seattle in our fabulous food truck',
     website: 'http://www.314pieseattle.com',
     Facebook: 'https://www.facebook.com/pages/314-PIE/341309415945288',
-    Twitter: 'https://twitter.com/314PIESeattle'
+    Twitter: 'https://twitter.com/314PIESeattle',
   },
   {
     name: 'A Fire Inside Wood Fired Pizza',
@@ -15,7 +19,7 @@ var foodTrucks = [
     schedule: ['Tuesday', 'Wednesday', 'Thursday', 'Friday'],
     payment: ['Cash', 'Cards'],
     description: 'Neapolitan Thin Crust Wood Fired Pizza',
-    Facebook: 'https://www.facebook.com/AFireInsideWoodFiredPizza'
+    Facebook: 'https://www.facebook.com/AFireInsideWoodFiredPizza',
   },
   {
     name: 'Absolut Hot Dog and Gyros',
@@ -23,7 +27,7 @@ var foodTrucks = [
     schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
     payment: ['Cash', 'Cards'],
     Facebook: 'https://www.facebook.com/pages/Absolut-HOT-DOG/146715428835785',
-    Twitter: 'https://twitter.com/AbsoluteHotDog'
+    Twitter: 'https://twitter.com/AbsoluteHotDog',
   },
   {
     name: 'Athena\'s',
@@ -33,11 +37,11 @@ var foodTrucks = [
     description: 'Delicious Greek Style Street Food',
     website: 'http://feastwiththegods.com/',
     Facebook: 'https://www.facebook.com/Athenasgyros',
-    Twitter: 'https://twitter.com/Eatwiththegods'
+    Twitter: 'https://twitter.com/Eatwiththegods',
   },
   {
     name: 'Auto Pompa Pizzeria',
-    type: ['Pizza']
+    type: ['Pizza'],
   },
   {
     name: 'Bake My Day',
@@ -47,7 +51,7 @@ var foodTrucks = [
     description: 'Serving up delicious whoopie pies, cakes, pies, bars, brownies, truffles, and cookies from Bertha Mae, our bakery-on-wheels',
     website: 'http://www.bakemydayseattle.com/',
     Facebook: 'https://www.facebook.com/bakemydayseattle',
-    Twitter: 'https://twitter.com/BMDSeattle'
+    Twitter: 'https://twitter.com/BMDSeattle',
   },
   {
     name: 'Balleywood Creamery',
@@ -56,7 +60,7 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'Ice creams and sorbets that are intensely flavored and as locally sourced and seasonal as possible without sacrificing taste or texture. All from a fetching cart.',
     website: 'http://www.balleywoodcreamery.com/',
-    Facebook: 'https://www.facebook.com/balleywoodcreamery'
+    Facebook: 'https://www.facebook.com/balleywoodcreamery',
   },
   {
     name: 'Barking Frog Mobile Kitchen',
@@ -65,7 +69,7 @@ var foodTrucks = [
     description: 'Offsite catering from Barking Frog is hitting the road in style to satisfy your Grand Marnier Prawn craving by bringing (your favorite) gourmet eats to the streets!',
     website: 'http://barkingfrogrestaurant.com',
     Facebook: 'https://www.facebook.com/BarkingFrogMobileKitchen',
-    Twitter: 'https://twitter.com/BarkingFrogMK'
+    Twitter: 'https://twitter.com/BarkingFrogMK',
   },
   {
     name: 'Barriga Llena',
@@ -75,15 +79,15 @@ var foodTrucks = [
     description: 'Barriga Llena was the first vendor to introduce traditional Mexican tortas to Seattle, just the way you have them in Mexico City',
     website: 'http://www.labarrigallena.com',
     Facebook: 'https://www.facebook.com/barrigallenaseattle',
-    Twitter: 'https://twitter.com/barrigallena'
+    Twitter: 'https://twitter.com/barrigallena',
   },
   {
     name: 'Basil and Javi\'s Fresh Food Now',
-    type: ['Vegan Sandwiches', 'Sandwiches']
+    type: ['Vegan Sandwiches', 'Sandwiches'],
   },
   {
     name: 'BeanFish',
-    type: ['Asian']
+    type: ['Asian'],
   },
   {
     name: 'BeezNeez Gourmet Sausages',
@@ -93,7 +97,7 @@ var foodTrucks = [
     description: 'Alaskan Reindeer Sausages & other gourmet and exotic Sausages and hotdogs',
     website: 'http://beezneezsausages.com/',
     Facebook: 'https://www.facebook.com/BeezNeezSausageSeattle',
-    Twitter: 'https://twitter.com/BeezNeezSeattle'
+    Twitter: 'https://twitter.com/BeezNeezSeattle',
   },
   {
     name: 'Beloved Mexico',
@@ -101,7 +105,7 @@ var foodTrucks = [
     schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     payment: ['Cash', 'Cards'],
     description: 'Authentic Mexican cuisine made w/ natural, organic ingredients',
-    website: 'http://www.belovedmexico.com'
+    website: 'http://www.belovedmexico.com',
   },
   {
     name: 'Ben & Jerry\'s',
@@ -109,7 +113,7 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'Ice Cream Truck (Two trucks, carts and the CowMobile!)',
     website: 'http://www.wabenjerry.com',
-    Twitter: 'https://www.twitter.com/wabenjerry'
+    Twitter: 'https://www.twitter.com/wabenjerry',
   },
   {
     name: 'Big Boys Fillipino Food Truck',
@@ -117,7 +121,7 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'Bring people together using their sense of Filipino cuisine in a unique and flavorful way',
     Facebook: 'https://www.facebook.com/bigboysfilipinofoodtruck',
-    Twitter: 'https://twitter.com/NateVibez'
+    Twitter: 'https://twitter.com/NateVibez',
   },
   {
     name: 'Big Dog\'s',
@@ -126,20 +130,20 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'Biggest Weiner Around!',
     Facebook: 'https://www.facebook.com/BigDogsTacos',
-    Twitter: 'https://twitter.com/BigDogBuzz'
+    Twitter: 'https://twitter.com/BigDogBuzz',
   },
   {
     name: 'Big Ed\'s Good Eats',
     type: ['Sandwiches'],
     payment: ['Cash', 'Cards'],
     description: 'Steak sandwiches, burgers, pulled pork, beignets, quesadillas, nachos',
-    Facebook: 'https://www.facebook.com/BigEdsGoodEats'
+    Facebook: 'https://www.facebook.com/BigEdsGoodEats',
   },
   {
     name: 'Big House BBQ',
     type: ['BBQ'],
     description: 'All of Big House BBQ\'s meats are slow smoked using seasoned apple wood, and alter from the Great Northwest because LOW and SLOW is the only way to go.',
-    website: 'http://www.bighousebbq.net'
+    website: 'http://www.bighousebbq.net',
   },
   {
     name: 'Big Spoon',
@@ -149,7 +153,7 @@ var foodTrucks = [
     description: 'Hand made ice cream, ice cream sandwiches, and floats in the summer, hearty soups and stews in the cold, rainy months',
     website: 'http://bigspoonseattle.com',
     Facebook: 'https://www.facebook.com/pages/Big-Spoon/458061400937758',
-    Twitter: 'https://twitter.com/bigspoonseattle'
+    Twitter: 'https://twitter.com/bigspoonseattle',
   },
   {
     name: 'Bikelava',
@@ -157,7 +161,7 @@ var foodTrucks = [
     schedule: ['Thursday'],
     payment: ['Cash'],
     description: 'Traditional baklava served from a cute little bike cart',
-    Facebook: 'https://www.facebook.com/pages/Bikelava-Artisan-Peddled-Baklava/246842835435535'
+    Facebook: 'https://www.facebook.com/pages/Bikelava-Artisan-Peddled-Baklava/246842835435535',
   },
   {
     name: 'Bing of Fire',
@@ -167,7 +171,7 @@ var foodTrucks = [
     description: 'Chinese crepes, also known at jiangbing are a delicious traditional Chinese street snack',
     website: 'http://www.bingoffire.com',
     Facebook: 'https://www.facebook.com/pages/Bing-of-Fire/502888773079831',
-    Twitter: 'https://twitter.com/BingofFire'
+    Twitter: 'https://twitter.com/BingofFire',
   },
   {
     name: 'Biscuit Box',
@@ -177,7 +181,7 @@ var foodTrucks = [
     description: 'Sweet and Savory smothered biscuits made with local and seasonal ingredients',
     website: 'http://www.mobilemavensseattle.com/',
     Facebook: 'https://www.facebook.com/BiscuitBoxSEA',
-    Twitter: 'https://twitter.com/BiscuitBoxSEA'
+    Twitter: 'https://twitter.com/BiscuitBoxSEA',
   },
   {
     name: 'Bite Me Cupcakes',
@@ -185,7 +189,7 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'Cupcakes, Gelato and Pastry Truck serving curbside throughout King, Snohomish, Skagit Counties in Wa.',
     website: 'http://www.Bitemecupcakes.us',
-    Facebook: 'https://www.facebook.com/pages/Bite-Me-Cupcakes-Eatery/210398125665053'
+    Facebook: 'https://www.facebook.com/pages/Bite-Me-Cupcakes-Eatery/210398125665053',
   },
   {
     name: 'Bomba Fusion',
@@ -194,7 +198,7 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     website: 'http://bombafusion.com',
     Facebook: 'https://www.facebook.com/bombafusion',
-    Twitter: 'https://twitter.com/bombafusion'
+    Twitter: 'https://twitter.com/bombafusion',
   },
   {
     name: 'Bread and Circuses',
@@ -204,7 +208,7 @@ var foodTrucks = [
     description: 'Gastropub',
     website: 'http://www.eatbreadandcircuses.com/',
     Facebook: 'https://www.facebook.com/breadandcircusestruck',
-    Twitter: 'https://twitter.com/circustruck'
+    Twitter: 'https://twitter.com/circustruck',
   },
   {
     name: 'Buddha Bruddah',
@@ -213,7 +217,7 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'Gourmet Asian mixed plates',
     website: 'http://www.buddhabruddah.com',
-    Facebook: 'https://www.facebook.com/BuddhaBruddah'
+    Facebook: 'https://www.facebook.com/BuddhaBruddah',
   },
   {
     name: 'Budha Bear Bagels',
@@ -222,7 +226,7 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'Gourmet Bagel Sandwiches',
     Facebook: 'https://www.facebook.com/BudhaBearBagelsCafe',
-    Twitter: 'https://twitter.com/BudhaBearBagels'
+    Twitter: 'https://twitter.com/BudhaBearBagels',
   },
   {
     name: 'Bumbu Truck',
@@ -232,7 +236,7 @@ var foodTrucks = [
     description: 'Indonesian Street Food',
     website: 'http://www.bumbutruck.com',
     Facebook: 'https://www.facebook.com/Bumbutruck',
-    Twitter: 'https://twitter.com/bumbutruck'
+    Twitter: 'https://twitter.com/bumbutruck',
   },
   {
     name: 'BUNS',
@@ -242,13 +246,13 @@ var foodTrucks = [
     description: 'Gourmet burgers made from organic ingredients',
     website: 'http://www.bunsonwheels.com',
     Facebook: 'https://www.facebook.com/bunsburger',
-    Twitter: 'https://twitter.com/BunsOnWheels'
+    Twitter: 'https://twitter.com/BunsOnWheels',
   },
   {
     name: 'Cake Mobile',
     type: ['Sweets'],
     description: 'Events and festivals, and parked at their building near the Tacoma Dome before and after concerts and Dome events',
-    Facebook: 'https://www.facebook.com/celebritycakestudio'
+    Facebook: 'https://www.facebook.com/celebritycakestudio',
   },
   {
     name: 'Caravan Crepes',
@@ -257,7 +261,7 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'Sweet and Savory Crepes',
     website: 'http://www.caravanseattle.com',
-    Twitter: 'https://twitter.com/caravanseattle'
+    Twitter: 'https://twitter.com/caravanseattle',
   },
   {
     name: 'Charlie\'s',
@@ -267,7 +271,7 @@ var foodTrucks = [
     description: 'A fresh take on American diner fare',
     website: 'http://www.charliesbunsnstuff.com',
     Facebook: 'https://www.facebook.com/charliesbuns',
-    Twitter: 'https://twitter.com/CharliesBuns'
+    Twitter: 'https://twitter.com/CharliesBuns',
   },
   {
     name: 'Cheese Wizards',
@@ -277,11 +281,11 @@ var foodTrucks = [
     description: 'Grilled Cheese Magic',
     website: 'http://wizardsofcheese.com',
     Facebook: 'https://www.facebook.com/CheeseWizards',
-    Twitter: 'https://twitter.com/CheeseWizards'
+    Twitter: 'https://twitter.com/CheeseWizards',
   },
   {
     name: 'Chewaya Authentic Moroccan Sanwiches',
-    type: ['Moroccan']
+    type: ['Moroccan'],
   },
   {
     name: 'Chick\'n Fix',
@@ -291,7 +295,7 @@ var foodTrucks = [
     description: 'Serving up delicious chicken treats!',
     website: 'http://www.chicknfix.com',
     Facebook: 'https://www.facebook.com/chickn.fix',
-    Twitter: 'https://twitter.com/Chicknfix'
+    Twitter: 'https://twitter.com/Chicknfix',
   },
   {
     name: 'Chopstix',
@@ -301,7 +305,7 @@ var foodTrucks = [
     description: 'Asian Fusion, like the truck\'s name Chopstix. Our specialty is a little twist of Asian cuisine with western cuisine',
     website: 'http://www.chopstixmobile.com',
     Facebook: 'https://www.facebook.com/chopstixmobile',
-    Twitter: 'https://twitter.com/ChopstixMobile'
+    Twitter: 'https://twitter.com/ChopstixMobile',
   },
   {
     name: 'Contigo',
@@ -310,7 +314,7 @@ var foodTrucks = [
     description: 'Modern Mexican - hand made tortillas and gorditas, all gluten-free',
     website: 'http://www.contigoseattle.com',
     Facebook: 'https://www.facebook.com/contigoseattle',
-    Twitter: 'https://twitter.com/ContigoSeattle'
+    Twitter: 'https://twitter.com/ContigoSeattle',
   },
   {
     name: 'Convoy Coffee',
@@ -320,7 +324,7 @@ var foodTrucks = [
     description: 'A bike-driven mobile coffee stand bringing manually-brewed specialty coffee to Seattle streets, previously Handlebar Coffee',
     website: 'http://instagram.com/convoycoffee',
     Facebook: 'https://www.facebook.com/convoycoffee',
-    Twitter: 'https://twitter.com/convoycoffee'
+    Twitter: 'https://twitter.com/convoycoffee',
   },
   {
     name: 'Crisp Creperie',
@@ -330,7 +334,7 @@ var foodTrucks = [
     description: 'Locally sourced, in-season, top-shelf ingredients in exquisitely crafted crepes',
     website: 'http://www.crispseattle.com',
     Facebook: 'https://www.facebook.com/CrispSeattle',
-    Twitter: 'https://twitter.com/CrispSeattle'
+    Twitter: 'https://twitter.com/CrispSeattle',
   },
   {
     name: 'Curb Jumper Street Eats',
@@ -340,11 +344,11 @@ var foodTrucks = [
     description: 'Gourmet Sliders and Specialty Sandwiches',
     website: 'http://www.curbjumperstreeteats.com',
     Facebook: 'https://www.facebook.com/CurbJumperStreetEats',
-    Twitter: 'https://twitter.com/CurbJumper206'
+    Twitter: 'https://twitter.com/CurbJumper206',
   },
   {
     name: 'Curbside',
-    type: ['Vietnamese']
+    type: ['Vietnamese'],
   },
   {
     name: 'Danielle\'s Crepes',
@@ -353,11 +357,11 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'Savory and sweet crepes; breakfast, lunch and dinner; hot coffee and espresso drinks',
     website: 'http://cremacreperie.com',
-    Facebook: 'https://www.facebook.com/pages/Crema-Creperie-Espresso-Bar/303099846462139'
+    Facebook: 'https://www.facebook.com/pages/Crema-Creperie-Espresso-Bar/303099846462139',
   },
   {
     name: 'Dante\'s Inferno Dogs',
-    type: ['Hot Dogs']
+    type: ['Hot Dogs'],
   },
   {
     name: 'Delicatessen Montanti',
@@ -366,7 +370,7 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'East Coast deli sandwiches to die for!',
     website: 'http://montanti.wix.com/delicatessenmontanti',
-    Facebook: 'https://www.facebook.com/pages/Delicatessen-Montanti/823352311016462'
+    Facebook: 'https://www.facebook.com/pages/Delicatessen-Montanti/823352311016462',
   },
   {
     name: 'Diablo Food Truckz',
@@ -374,21 +378,21 @@ var foodTrucks = [
     payment: ['Cash'],
     description: 'Serving yakisoba pan (fried noodle sandwiches)',
     Facebook: 'https://www.facebook.com/DiabloFoodTruckz',
-    Twitter: 'https://twitter.com/DiabloFood'
+    Twitter: 'https://twitter.com/DiabloFood',
   },
   {
     name: 'Djung on Wheels',
     type: ['Thai'],
     schedule: ['Monday', 'Tuesday', 'Wednesday', 'Friday'],
     description: 'Family-owned business offering great Thai food',
-    Facebook: 'https://www.facebook.com/djungfood'
+    Facebook: 'https://www.facebook.com/djungfood',
   },
   {
     name: 'Dog Japon',
     type: ['Hot Dogs'],
     schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     payment: ['Cash', 'Cards'],
-    description: 'Hot dogs with a Japanese sensibility'
+    description: 'Hot dogs with a Japanese sensibility',
   },
   {
     name: 'Dogfather Catering',
@@ -396,7 +400,7 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'Hot dogs, sausages and wood-fired pizza',
     Facebook: 'https://www.facebook.com/dogfathercatering',
-    Twitter: 'https://www.twitter.com/dogfathercater'
+    Twitter: 'https://www.twitter.com/dogfathercater',
   },
   {
     name: 'Don Lucho\'s',
@@ -405,7 +409,7 @@ var foodTrucks = [
     description: 'Latin sandwiches',
     website: 'http://www.donluchosinseattle.com',
     Facebook: 'https://www.facebook.com/donluchos206',
-    Twitter: 'https://twitter.com/donluchos'
+    Twitter: 'https://twitter.com/donluchos',
   },
   {
     name: 'El Animal',
@@ -413,14 +417,14 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'Cuban and Argentinian sandwiches and food',
     website: 'http://www.elanimalfoodtruck.com',
-    Facebook: 'https://www.facebook.com/elanimalfoodtruck'
+    Facebook: 'https://www.facebook.com/elanimalfoodtruck',
   },
   {
     name: 'El Cabrito',
     type: ['Mexican'],
     schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     payment: ['Cash', 'Cards'],
-    description: 'Traditional Oaxacan Mexican'
+    description: 'Traditional Oaxacan Mexican',
   },
   {
     name: 'El Camion',
@@ -429,7 +433,7 @@ var foodTrucks = [
     payment: ['Cash'],
     description: 'Bringing you the finest and most authentic of Mexican cuisine',
     website: 'http://www.elcamion.com',
-    Twitter: 'https://twitter.com/elcamionseattle'
+    Twitter: 'https://twitter.com/elcamionseattle',
   },
   {
     name: 'El Sabroso de Seattle',
@@ -438,7 +442,7 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'Specializing in Gourmet Tortas, Tacos, Tamales (on green banana leaf) and Quesadillas',
     websites: 'http://www.elsabrosodeseattle.com',
-    Facebook: 'https://www.facebook.com/elsabrosobeaconhill'
+    Facebook: 'https://www.facebook.com/elsabrosobeaconhill',
   },
   {
     name: 'Ezell\'s Express',
@@ -447,7 +451,7 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'Fresh, Good and Fast! Famous fried chicken',
     Facebook: 'https://www.facebook.com/pages/Ezells-Express/119007364918927',
-    Twitter: 'https://twitter.com/EzellsExpress1'
+    Twitter: 'https://twitter.com/EzellsExpress1',
   },
   {
     name: 'Falafel Salam',
@@ -456,7 +460,7 @@ var foodTrucks = [
     description: 'Gourmet, authentic falafel & shawarma',
     website: 'http://falafelsalam.com',
     Facebook: 'https://www.facebook.com/FalafelSalam',
-    Twitter: 'https://twitter.com/FalafelSalam'
+    Twitter: 'https://twitter.com/FalafelSalam',
   },
   {
     name: 'Fez',
@@ -465,7 +469,7 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'Modern Middle eastern street food (and drink)!',
     Facebook: 'https://www.facebook.com/FezOnWheels/info',
-    Twitter: 'https://twitter.com/fezonwheels'
+    Twitter: 'https://twitter.com/fezonwheels',
   },
   {
     name: 'Flair Taco',
@@ -473,7 +477,7 @@ var foodTrucks = [
     schedule: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'],
     payment: ['Cash'],
     description: 'Regular taco truck in the Fremont neighborhood - open 7 days a week and late night',
-    Facebook: 'https://www.facebook.com/pages/Flair-Taco/197832600252403'
+    Facebook: 'https://www.facebook.com/pages/Flair-Taco/197832600252403',
   },
   {
     name: 'Frank\'s Franks',
@@ -481,7 +485,7 @@ var foodTrucks = [
     schedule: ['Monday', 'Sunday'],
     payment: ['Cash', 'Cards'],
     description: 'Gourmet hot dogs, weiners, sausages, hot links and more, contact at 425.761.9447 or franksfranks3@gmail.com',
-    Facebook: 'https://www.facebook.com/franksfrankshotdogs'
+    Facebook: 'https://www.facebook.com/franksfrankshotdogs',
   },
   {
     name: 'Fruit Chatter Box',
@@ -490,7 +494,7 @@ var foodTrucks = [
     payment: ['Cash', 'Cards'],
     description: 'Fruit Chatter Box provides fresh, seasonal fresh fruit in cups or on a stick at local festivals and street fairs.',
     Facebook: 'https://www.facebook.com/fruitchatterbox',
-    Twitter: 'https://twitter.com/fruitchatterbox'
+    Twitter: 'https://twitter.com/fruitchatterbox',
   },
   {
     name: 'Full Tilt Ice Cream',
@@ -499,8 +503,8 @@ var foodTrucks = [
     description: 'Handmade ice creams!',
     website: 'http://www.fulltilticecream.com',
     Facebook: 'https://www.facebook.com/fulltilticecreams',
-    Twitter: 'https://twitter.com/fticecream'
-  }
+    Twitter: 'https://twitter.com/fticecream',
+  },
 ];
 
 // this module should support the following methods:
@@ -509,3 +513,108 @@ var foodTrucks = [
 // getFoodTypes() - return unique list of all associated food types (underscore has a function to help)
 // filterByDay(day) - return trucks with 'day' in schedule (use your filterByDay function from Module 3 homework)
 // filterByFoodType(foodType) - return trucks with associated 'foodType'
+
+/* eslint-enable max-len */
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
+module.exports = {
+
+  /* eslint-enable no-undef */
+
+  getTrucks: function () {
+    return foodTrucks;
+  },
+
+  getTruck: function (truck) {
+    var foundTruck = 0;
+    truck = truck.charAt(0).toUpperCase() + truck.slice(1);
+    for (var i = 0; i < foodTrucks.length; i++) {
+      if (foodTrucks[i].name === truck) {
+        var gotTruck = foodTrucks[i];
+        // console.log(foodTrucks[i].name);
+        foundTruck = 1;
+
+        return gotTruck;
+      }
+
+    }
+
+    if (foundTruck === 0) {
+      return (truck + ' truck not found');
+    }
+
+  },
+
+  getFoodTypes: function () {
+    var types = [];
+
+    for (var i = 0; i < foodTrucks.length; i++) {
+      var foundType = 0;
+      var curType = foodTrucks[i].type;
+
+      for (var j = 0; j < curType.length; j++) {
+        if (types.indexOf(curType[j]) > -1) {
+          console.log(curType + ' already exists in the types collection.');
+          foundType = 1;
+        }
+        else if (foundType === 0) {
+          types.push(curType[j]);
+          // console.log('New food type is : ' + types + '\n');
+        }
+      }
+    }
+
+    return types;
+  },
+
+  filterTrucksByDay: function(day) {
+    if (day) {
+      var dayToCheck = day;
+    }
+
+    var trucksToday = [];
+    console.log('Day to check ' + dayToCheck);
+    for (var i = 0; i < foodTrucks.length; i++) {
+      var truckDays = [];
+      truckDays = foodTrucks[i].schedule;
+
+      if (truckDays) {
+        for (var j = 0; j < truckDays.length; j++) {
+          if (truckDays[j] === dayToCheck) {
+            // var gotTruck = foodTrucks[i];
+            // push to an array returns Object[object]
+            // return gotTruck;
+            trucksToday += foodTrucks[i].name + '\n';
+            // trucksToday += gotTruck;
+          }
+        }
+      }
+    }
+    /* eslint-disable newline-before-return */
+
+    return trucksToday;
+  },
+
+  filterTrucksByFoodType: function (foodType) {
+    var results = [];
+    foodType = foodType.charAt(0).toUpperCase() + foodType.slice(1);
+    console.log('Looking for: ' + foodType);
+
+    for (var i = 0; i < foodTrucks.length; i++) {
+      var curTypes = foodTrucks[i].type;
+      if (curTypes.indexOf(foodType) > -1) {
+        var gotTruck = foodTrucks[i];
+        results.push(gotTruck);
+      }
+    }
+    if (results[0]) {
+
+      return(results);
+    }
+    else {
+      console.log('Customer could not find this food: ' + foodType);
+
+      return (foodType + ' type not found');
+    }
+  },
+};
