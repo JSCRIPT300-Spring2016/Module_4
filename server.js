@@ -22,6 +22,12 @@ app.get('/', function (request, response) {
   response.send(headerText);
 });
 
+app.get('/trucks', function (request, response) {
+  var truckDetails = trucks.getTruck('El Animal');
+  
+  response.send(truckDetails);
+})
+
 app.listen(3000, function () {
   console.log('server started on port 3000');
 });
