@@ -33,16 +33,15 @@ app.use(function (request, response, next) {
 
 //   `/trucks` This route returns the list of all trucks in the module.
 // http://127.0.0.1:3000/trucks
-app.get('/trucks', function (request, response, next) {
+app.get('/trucks', function (request, response) {
   var truckList = trucks.getTrucks();
   response.send(truckList);
-  next();
 });
 
 // `/trucks/:name` This route returns a single truck object that matches
 // the name parameter passed in the route.
 // http://127.0.0.1:3000/trucks:Fez
-app.get('/trucks/:name', function (request, response, next) {
+app.get('/trucks/:name', function (request, response) {
   var truckReq = request.params.name;
   console.log('request[' + truckReq + ']');
   var truck = trucks.getTruck(truckReq);
@@ -54,23 +53,21 @@ app.get('/trucks/:name', function (request, response, next) {
   } else {
     response.send(truck);
   }
-  next();
 });
 
 //  `/food-types` This route returns the list of all possible food types
 // served by trucks in the module
 // http://127.0.0.1:3000/foodTypes
-app.get('/food-types', function (request, response, next) {
+app.get('/food-types', function (request, response) {
   var foodList = trucks.getFoodTypes();
   response.send(foodList);
-  next();
 });
 
 // `/food-types/:type` This route returns the list of all trucks that serve the
 // food type that matches (case insensitive) the type parameter passed.
 // http://127.0.0.1:3000/foodTypes:Pizza
 // http://127.0.0.1:3000/foodTypes:pizza
-app.get('/food-types/:type', function (request, response, next) {
+app.get('/food-types/:type', function (request, response) {
   var typeReq = request.params.type;
   console.log('request[' + typeReq + ']');
   var type = trucks.filterTrucksByFoodType(typeReq);
@@ -79,7 +76,6 @@ app.get('/food-types/:type', function (request, response, next) {
   } else {
     response.send(type);
   }
-  next();
 });
 
 // test for var openTrucks = require('./trucks');
