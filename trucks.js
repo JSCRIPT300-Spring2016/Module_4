@@ -536,8 +536,7 @@ function filterTrucksByFoodType(foodType) {
     var types = truck.type.map(function (type) {
       return type.toLowerCase();
     });
-
-    return truck.type.indexOf(foodType.toLowerCase) !== -1;
+    return types.indexOf(foodType.toLowerCase()) !== -1;
   });
   return filteredList;
 }
