@@ -1,0 +1,23 @@
+{
+  "name": "homework_4",
+  "version": "1.0.0",
+  "description": "This is my assignment for Module_4",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JSCRIPT300-Spring2016/Module_4.git"
+  },
+  "author": "Josh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JSCRIPT300-Spring2016/Module_4/issues"
+  },
+  "homepage": "https://github.com/JSCRIPT300-Spring2016/Module_4#readme",
+  "dependencies": {
+    "express": "^4.13.4",
+    "lodash": "^4.12.0"
+  }
+}
