@@ -4,6 +4,8 @@
   "description": "Week 4",
   "main": "index.js",
   "dependencies": {
+    "express": "^4.14.0",
+    "lodash": "^4.13.1",
     "util": "^0.10.3"
   },
   "devDependencies": {},

@@ -33,15 +33,12 @@
             "error",
             "global"
         ],
-        "no-console": [
-            "error"
-        ],
         "comma-dangle": [
             "error"
         ],
         "max-len": [
             "error",
-            80,
+            280,
             2,
             {"ignoreUrls": true}
         ],
